@@ -1,16 +1,19 @@
 package main
 
-import "fmt
-	math"
+import (
+	"fmt"
+	"math"
+	)
 
 func main(){
 
 var num float64
 
-fmt.Printf("Calculadora de raiz quadrada. Digite qualquer número possível para a realizar sua matrícula hoje: \n")
-fmt.Scanf("%d", &num)
+fmt.Println("Calculadora de raiz quadrada.")
+fmt.Println("Digite qualquer número possível para a realizar sua matrícula hoje: ")
+fmt.Scanf("%f", &num)
 
-sqt := math.Sqrt(num)
-fmt.Printf("O valor da raiz quadrada é ", sqt)
+sqrt := math.Sqrt(num)
+fmt.Printf("O valor da raiz quadrada é %.1f \n", sqrt)
 
 }
