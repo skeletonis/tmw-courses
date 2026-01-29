@@ -1,19 +1,24 @@
+//Append só funciona com slices
+
 package main
+
 
 import "fmt"
 
 
-func main(){
+func main() {
 	
-var retorno [2]stribg
+	var retorno [2]string
+	
+	fmt.Println("Digite seu primeiro nome: ")
+	fmt.Scan(&retorno[0])
 
-	for i = 0; i <= len(retorno){
-	var inputTxt string
+	fmt.Println("Digite seu sobrenome: ")
+	fmt.Scan(&retorno[1])
 
-	fmt.Printf("Qual seu nome completo: ")
-	fmt.Scanf("%")
-
-
-	}
+	fmt.Println("Seu nome completo é ", retorno[0], retorno[1])
+	fmt.Println(retorno)
 
 }
+
+
