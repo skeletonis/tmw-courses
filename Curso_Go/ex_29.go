@@ -5,10 +5,10 @@ import (
 "os"
 )
 
+func main() {
 
-func getValor(fruta string) float64{
-
-var valor float64
+	
+var total float64
 
 	frutas := map[string]float64{
 		"maçã": 		1.50,
@@ -22,38 +22,26 @@ var valor float64
 		"jaca": 		5.80,
 	}
 
-	if preco, ok := frutas[fruta]; !ok{
-		fmt.Println("Tipo inválido!")
-		os.Exit(1)
-
-	} else {
-		valor = preco 
-	}
-	
-return valor
-
-}
-
-
-func main() {
-
-var total float64
 
 	for{
 		var inputText string
 		fmt.Println("Que frutas deseja comprar?")
-		fmt.Println("maçã / banana / uva / pera / laranja / limão / goiaba / abacaxi / jaca")
+		fmt.Println(frutas)
 		fmt.Printf("Escolhar -> ")
-		fmt.Scan(&inputText)
+		fmt.Scanf("%s", &inputText) //Aqui precisa ser um scanf pois precisa tipar o dado que esta entrando e 
+																//assim conseguir o breake no laço.
 
 		if inputText == ""{
-			fmt.Printf("O valor total da compra é de: R$", total)
 			break
-	}
-		
-		total += getValor(inputText)
-
-
+		} else if valor, ok := frutas[inputText]; !ok{
+			fmt.Println("Tipo Inválido!")
+			os.Exit(1)
+		} else {
+		total += valor
+}
 
 }
+
+	fmt.Println("O valor total da compra é de: R$", total)
+
 }
